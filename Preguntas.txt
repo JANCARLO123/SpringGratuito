@@ -1,0 +1,51 @@
+ACTIVIDA 1
+
+6. Con lo visto hasta ahora ¿Qué es Spring MVC?
+rpta : a) Un Framework Java que ayuda al desarrollo de aplicaciones web.
+
+7. ¿Porque necesitamos configurar el filtro de Spring MVC en el web.xml?
+rpta: c) Para que todos los requests que lleguen a la aplicación sean recibidos y tratados por Spring MVC.
+
+8. Abra el archivo spring-context.xml. ¿Para que sirve?. ¿O que esta configurado ahí?.
+rpta: este archivo es usado para configurar la funcionalidad del DispatcherServlet y tiene configurado lo siguiente:
+	- <mvc:annotation-driven /> : que indica el uso de anotaciones.
+	- <context:component-scan    : que indica a spring donde debe de buscar los recursos (anotaciones).
+	- y el resolutor de vista con prefijo : /WEB-INF/views/ y sufijo : .jsp
+
+ACTIVIDAD 2
+
+1. ¿Cuáles son los motivos para no colocar el código de negocio Java con el código HTML?.
+	- Por que si se deseara modificar la vista también sería necesario modificar la lógica del negocio.
+	- Por que el patron MVC consiste en tener 3 capas : Modelo, Vista y Controlador.
+		
+2. En MVC. ¿En que capa trabaja Spring?
+	- Trabaja en la capa de la vista y la capa Controlador.
+3. ¿Cuándo un request llega al servidor, cual es el orden de ejecución común?.
+	- El request llega al DispatcherServlet y éste le asigna un controlador, el controlador delega la responsabilidad a 	las clases de servicio, éstos realizan su trabajao y al final el controlador devuelve el recurso solicitado.
+4. ¿Qué tecnología estándar usa Spring MVC en la capa View?.
+	- jsp.
+5. ¿En MVC, la regla de negocio en que capa es llamada?.
+	- Modelo.
+
+ACTIVIDAD 3
+6. ¿Cómo Spring sabe que campo de texto va para que atributo?
+RPTA : b) El “nombre” del input en HTML debe ser el nombre del atributo en la clase.
+
+
+ACTIVIDAD 4 
+
+4. ¿Para que sirven los dos parámetros que el método addObject() recibe?
+ rpta: b. El primero es el nombre del objeto en el JSP, y el segundo es el propio objeto.
+
+5. Recuerde que usamos Tags de JSTL, como c:if y c:forEach. Ellas son bastantes útiles y bien comunes en el desarrollo
+Java Web. ¿qué opina de ellas?
+
+rpta: los tags de JSTL son bastante útiles en páginas jsp, ya que simplifican el trabajo y hacen que podamos ahorrar código.
+
+ACTIVIDAD 5
+
+5. Revise este blog y diga que es el flash scope
+
+
+
+      
