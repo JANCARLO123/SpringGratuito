@@ -1,13 +1,18 @@
 package com.mycompany.cuentas.modelo;
 
+
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Calendar;
 
 public class Cuenta {
-	
+
 	private Long id;
 
+    @NotNull(message = "{cuenta.formulario.descripcion.obligatorio}")
+    @Size(min=5, message ="{cuenta.formulario.descripcion.tamanho}")
 	private String descripcion;
 
 	private boolean pago;

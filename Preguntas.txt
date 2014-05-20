@@ -1,4 +1,10 @@
-ACTIVIDA 1
+
+El proyecto está en : https://github.com/CiberAyaC/SpringGratuito.git
+	usé el IDE IntellijIDEA, y maven.
+
+Saludos.
+
+ACTIVIDAD 1
 
 6. Con lo visto hasta ahora ¿Qué es Spring MVC?
 rpta : a) Un Framework Java que ayuda al desarrollo de aplicaciones web.

@@ -12,17 +12,36 @@ import java.util.List;
 import com.mycompany.cuentas.ConnectionFactory;
 import com.mycompany.cuentas.modelo.Cuenta;
 import com.mycompany.cuentas.modelo.TipoDeCuenta;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
+import javax.sql.DataSource;
+
+@Repository
 public class CuentaDAO {
+
 	private Connection connection;
 
-	public CuentaDAO() {
-		try {
-			this.connection = new ConnectionFactory().getConnection();
-		} catch (SQLException e) {
-			throw new RuntimeException(e);
-		}
-	}
+    @Autowired
+    public CuentaDAO(DataSource ds) {
+        try {
+            this.connection =
+                    ds.getConnection();
+        } catch (SQLException e) {
+            throw new
+                    RuntimeException(e);
+        }
+    }
+
+//    @Autowired
+//	public CuentaDAO(Connection connection) {
+//        this.connection= connection;
+//		try {
+//			this.connection = new ConnectionFactory().getConnection();
+//		} catch (SQLException e) {
+//			throw new RuntimeException(e);
+//		}
+//	}
 
 	public void agregar(Cuenta cuenta) {
 		String sql = "insert into cuentas (descripcion, pago, valor, tipo) values (?,?,?,?)";
